@@ -1,0 +1,29 @@
+ <head>
+	<if condition="'[[preloader.enable]]' === 'true'">
+		<include src="@components/effects/preloader/preloader.html" locals='{"once":"[[preloader.once]]"}'></include>
+	</if>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<include src="@components/layout/head/fonts-preload.html"></include>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="@styles/fonts/fonts.css">
+	<link rel="stylesheet" href="@styles/fonts/iconfont.css">
+	<link rel="stylesheet" href="@styles/style.scss">
+	<link rel="icon" href="@img/favicon.svg" type="image/svg+xml">
+	<if condition="'[[keywords]]' !== ''">
+		<meta name="keywords" content="[[keywords]]">
+	</if>
+	<if condition="'[[description]]' !== ''">
+		<meta name="description" content="[[description]]">
+	</if>
+	<if condition="'[[canonical]]' !== ''">
+		<link rel="canonical" href="[[canonical]]">
+		<meta property="og:url" content="[[canonical]]">
+		<meta property="og:type" content="website">
+		<meta property="og:title" content="[[title]]">
+		<meta property="og:description" content="[[description]]">
+	</if>
+	<title>[[title]]</title>
+</head>

@@ -1,0 +1,16 @@
+/* Палитра лендинга недвижимости */
+:root {
+	--primary: #000;
+	/* Основные цвета из палитры */
+	--re-dark: #5C5C5C;           /* тёмный серый */
+	--re-steel: #6A7A8E;          /* стальной сине-серый */
+	--re-dust: #8A9BB1;           /* пыльный сине-серый */
+	--re-sky: #B5D0DF;            /* светлый холодный голубой */
+	--re-light: #EBEBEB;          /* светлый фон / офф-вайт */
+	/* Семантика для лендинга */
+	--re-text: var(--re-dark);
+	--re-text-muted: var(--re-steel);
+	--re-accent: var(--re-steel);
+	--re-bg: var(--re-light);
+	--re-bg-hero: var(--re-sky);
+}

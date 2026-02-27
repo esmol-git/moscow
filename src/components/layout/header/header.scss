@@ -1,0 +1,145 @@
+.header {
+	position: sticky;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 50;
+	background: rgba(45, 52, 61, 0.75);
+	backdrop-filter: blur(12px);
+	-webkit-backdrop-filter: blur(12px);
+	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06);
+	transition: background 0.3s ease, box-shadow 0.3s ease;
+
+	&.--header-scroll {
+		background: rgba(235, 235, 235, 0.98);
+		box-shadow: 0 2px 16px rgba(92, 92, 92, 0.1);
+		.header__logo {
+			color: var(--re-dark);
+		}
+		.menu__link {
+			color: var(--re-dark);
+			&.--navigator-active {
+				color: var(--re-steel);
+				background: rgba(106, 122, 142, 0.12);
+			}
+			@media (any-hover: hover) {
+				&:hover {
+					color: var(--re-steel);
+				}
+			}
+		}
+		.icon-menu span,
+		.icon-menu::before,
+		.icon-menu::after {
+			background-color: var(--re-dark);
+		}
+	}
+
+	&__container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		min-height: toRem(72);
+
+		&--row {
+			flex-direction: row;
+		}
+	}
+
+	&__logo {
+		display: inline-flex;
+		align-items: baseline;
+		gap: toRem(6);
+		text-decoration: none;
+		color: #fff;
+		transition: color 0.2s;
+		@media (any-hover: hover) {
+			&:hover {
+				color: var(--re-sky);
+			}
+		}
+	}
+	&__logo-icon {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
+		color: inherit;
+		// Иконка чуть приподнята — лучше смотрится рядом с рукописной «A»
+		transform: translateY(-1px);
+		svg {
+			display: block;
+			width: toRem(18);
+			height: toRem(18);
+		}
+	}
+	&__logo-text {
+		font-family: "Dancing Script", cursive;
+		font-weight: 600;
+		font-size: 1.5rem;
+		line-height: 1.2;
+	}
+
+	&__city-wrap {
+		display: flex;
+		align-items: center;
+	}
+	&__city-select {
+		padding: toRem(8) toRem(28) toRem(8) toRem(12);
+		font-size: toRem(14);
+		font-weight: 500;
+		color: #fff;
+		background-color: rgba(255, 255, 255, 0.15);
+		border: 1px solid rgba(255, 255, 255, 0.25);
+		border-radius: toRem(8);
+		cursor: pointer;
+		appearance: none;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		background-repeat: no-repeat;
+		background-position: right toRem(10) center;
+		background-size: 12px 12px;
+		min-width: toRem(130);
+		transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+		// Светлая стрелка на тёмном хедере (над героем)
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M3 4.5L6 7.5L9 4.5' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+		&:focus {
+			outline: none;
+			border-color: rgba(255, 255, 255, 0.5);
+		}
+		// Тёмная стрелка на светлом хедере (после скролла)
+		.header.--header-scroll & {
+			color: var(--re-dark);
+			background-color: rgba(106, 122, 142, 0.12);
+			border-color: rgba(92, 92, 92, 0.2);
+			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M3 4.5L6 7.5L9 4.5' stroke='%235C5C5C' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+			&:focus {
+				border-color: var(--re-steel);
+			}
+		}
+		@media (max-width: toEm(767.98)) {
+			min-width: toRem(110);
+			font-size: toRem(13);
+			padding: toRem(6) toRem(24) toRem(6) toRem(10);
+		}
+	}
+
+	// Над героем — светлое меню
+	&:not(.--header-scroll) .menu__link {
+		color: rgba(255, 255, 255, 0.9);
+		&.--navigator-active {
+			color: #fff;
+			background: rgba(255, 255, 255, 0.15);
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				color: #fff;
+			}
+		}
+	}
+	&:not(.--header-scroll) .icon-menu span,
+	&:not(.--header-scroll) .icon-menu::before,
+	&:not(.--header-scroll) .icon-menu::after {
+		background-color: #fff;
+	}
+}

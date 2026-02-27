@@ -1,0 +1,16 @@
+<header data-fls-header data-fls-header-scroll data-fls-header-scroll-show="500" data-fls-lp class="header">
+	<div class="header__container header__container--row">
+		<a href="#hero" data-fls-scrollto="#hero" data-fls-scrollto-header class="header__logo">
+			<span class="header__logo-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
+			<span class="header__logo-text">Antalya</span>
+		</a>
+		<div class="header__city-wrap">
+			<select id="header-city" class="header__city-select" data-fls-city-select data-url-moscow="#" data-url-kaliningrad="#" data-url-krasnodar="#" aria-label="Выбор города">
+				<option value="moscow">Москва</option>
+				<option value="kaliningrad">Калининград</option>
+				<option value="krasnodar">Краснодар</option>
+			</select>
+		</div>
+		<include src="@components/layout/menu/menu.html" locals='{"active":"[[active]]"}'></include>
+	</div>
+</header>

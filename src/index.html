@@ -1,0 +1,25 @@
+<template src="@components/templates/main/main.html" locals='{
+		"title":"Antalya House — недвижимость в Москве, квартиры и дома | antalya-house.ru", 
+		"lang":"ru",
+		"preloader": {
+			"enable":"false",
+			"once":"false"
+		},
+		"keywords":"недвижимость Москва, квартиры в Москве, недвижимость Москва, купить квартиру Москва, апартаменты Москва, Antalya House", 
+		"description":"Недвижимость в Москве от Antalya House. Подбор квартир, апартаментов и домов. Консультация бесплатно. antalya-house.ru",
+		"canonical":"https://antalya-house.ru/"
+	}'>
+	<block name="header">
+		<include src="@components/layout/header/header.html" locals='{"active":""}'></include>
+	</block>
+	<block name="main">
+		<include src="@components/pages/index/index.html" locals='{}'></include>
+	</block>
+	<block name="footer">
+		<include src="@components/layout/footer/footer.html" locals='{}'></include>
+	</block>
+	<block name="popup">
+		<include src="@components/layout/popup/contact.html" locals='{}'></include>
+		<include src="@components/layout/popup/success.html" locals='{}'></include>
+	</block>
+</template>

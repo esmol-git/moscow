@@ -1,0 +1,29 @@
+<div class="header__menu menu">
+	<button type="button" data-fls-menu class="menu__icon icon-menu" aria-label="Меню"><span></span></button>
+	<div class="menu__backdrop" aria-hidden="true"></div>
+	<nav class="menu__body">
+		<a href="#hero" data-fls-scrollto="#hero" data-fls-scrollto-header class="menu__logo">
+			<span class="menu__logo-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
+			<span class="menu__logo-text">Antalya</span>
+		</a>
+		<ul class="menu__list">
+			<each loop='item in [
+					{"id": "objects", "label": "Объекты"},
+					{"id": "about", "label": "О нас"},
+					{"id": "services", "label": "Услуги"},
+					{"id": "contacts", "label": "Контакты"}
+				]'>
+				<li class="menu__item">
+					<a data-fls-scrollto="#[[item.id]]" data-fls-scrollto-header href="#[[item.id]]" class="menu__link">[[item.label]]</a>
+				</li>
+			</each>
+		</ul>
+	</nav>
+</div>
+
+<!-- 
+<fetch url="@components/layout/menu/menu.json">
+	<each loop='item in response'>
+	</each>
+</fetch>
+-->

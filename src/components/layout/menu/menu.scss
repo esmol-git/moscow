@@ -1,0 +1,202 @@
+.menu {
+	// .menu__icon
+	&__icon {
+	}
+	// Логотип в мобильном меню (иконка + Antalya)
+	&__logo {
+		display: none;
+		@media (max-width: toEm($mobile)) {
+			display: inline-flex;
+			align-items: center;
+			gap: toRem(6);
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			height: toRem(72);
+			padding: 0 toRem(20);
+			z-index: 3;
+			text-decoration: none;
+			color: #2d343c;
+			transition: color 0.2s;
+			&:hover {
+				color: var(--re-steel);
+			}
+		}
+	}
+	&__logo-icon {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
+		color: inherit;
+		transform: translateY(-1px);
+		svg {
+			display: block;
+			width: toRem(18);
+			height: toRem(18);
+		}
+	}
+	&__logo-text {
+		font-family: "Dancing Script", cursive;
+		font-weight: 600;
+		font-size: 1.5rem;
+		line-height: 1.2;
+	}
+	// .menu__body — выезжающая панель на мобильных
+	&__body {
+		@media (max-width: toEm($mobile)) {
+			position: fixed;
+			width: 100%;
+			max-width: toRem(320);
+			height: 100svh;
+			left: -100%;
+			top: 0;
+			overflow: auto;
+			padding: toRem(72) toRem(20) toRem(32);
+			background: var(--re-light);
+			box-shadow: 4px 0 24px rgba(92, 92, 92, 0.12);
+			transition: left 0.3s ease, box-shadow 0.3s;
+			z-index: 40;
+			&::before {
+				content: "";
+				position: fixed;
+				width: 100%;
+				max-width: toRem(320);
+				height: toRem(72);
+				left: -100%;
+				top: 0;
+				background: var(--re-light);
+				box-shadow: 0 1px 0 rgba(92, 92, 92, 0.08);
+				transition: left 0.3s ease;
+				z-index: 2;
+			}
+			[data-fls-menu-open] & {
+				left: 0;
+				&::before {
+					left: 0;
+				}
+			}
+		}
+	}
+	// .menu__list
+	&__list {
+		display: flex;
+		align-items: center;
+		gap: toRem(8);
+		@media (max-width: toEm($mobile)) {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+	}
+	// .menu__item
+	&__item {
+	}
+	// .menu__link
+	&__link {
+		padding: toRem(8) toRem(12);
+		color: var(--re-dark);
+		font-weight: 500;
+		border-radius: 6px;
+		transition: color 0.2s, background 0.2s;
+		&.--navigator-active {
+			color: var(--re-steel);
+			background: rgba(106, 122, 142, 0.12);
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				color: var(--re-steel);
+			}
+		}
+		@media (max-width: toEm($mobile)) {
+			font-size: 1.125rem;
+			padding: toRem(14) toRem(12);
+			width: 100%;
+			border-radius: 8px;
+		}
+	}
+}
+
+// Пункты в выезжающей панели — всегда тёмные (перебиваем белый цвет из шапки)
+@media (max-width: toEm($mobile)) {
+	.menu__body .menu__link {
+		color: #2d343c !important;
+		&.--navigator-active {
+			color: #4a5568 !important;
+			background: rgba(106, 122, 142, 0.15);
+		}
+		&:hover {
+			color: #4a5568 !important;
+		}
+	}
+}
+
+// Оверлей за открытым мобильным меню — клик закрывает меню
+.menu__backdrop {
+	display: none;
+	@media (max-width: toEm($mobile)) {
+		display: block;
+		position: fixed;
+		inset: 0;
+		background: rgba(92, 92, 92, 0.25);
+		opacity: 0;
+		pointer-events: none;
+		transition: opacity 0.3s ease;
+		z-index: 39;
+		[data-fls-menu-open] & {
+			opacity: 1;
+			pointer-events: auto;
+		}
+	}
+}
+
+//Burger Icon
+.icon-menu {
+	display: none;
+	@media (max-width: toEm($mobile)) {
+		display: block;
+		position: relative;
+		width: toRem(30);
+		height: toRem(18);
+		z-index: 5;
+		@media (any-hover: none) {
+			cursor: default;
+		}
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			right: 0;
+			position: absolute;
+			width: 100%;
+			height: 2px;
+			background-color: var(--re-dark);
+		}
+		&::before {
+			top: 0;
+		}
+		&::after {
+			bottom: 0;
+		}
+		span {
+			top: calc(50% - 1px);
+		}
+		[data-fls-menu-open] & {
+			span {
+				width: 0;
+			}
+			&::before,
+			&::after {
+			}
+			&::before {
+				top: calc(50% - 1px);
+				transform: rotate(-45deg);
+			}
+			&::after {
+				bottom: calc(50% - 1px);
+				transform: rotate(45deg);
+			}
+		}
+	}
+}

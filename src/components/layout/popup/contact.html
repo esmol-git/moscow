@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="@components/layout/popup/popup.scss">
+<div data-fls-popup="popup" aria-hidden="true" class="popup popup--contact">
+	<div data-fls-popup-wrapper class="popup__wrapper">
+		<div data-fls-popup-body class="popup__body popup__body--form">
+			<button data-fls-popup-close type="button" class="popup__close" aria-label="Закрыть"><svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg"><path opacity="0.85" d="M1.73333 1.48883L21.5469 21.0288" stroke="currentColor" stroke-linecap="square" /><path opacity="0.85" d="M21.2667 1.48883L1.45309 21.0288" stroke="currentColor" stroke-linecap="square" /></svg></button>
+			<div data-fls-popup-content class="popup__content">
+				<h3 class="popup__title">Связаться с нами</h3>
+				<p class="popup__text">Оставьте заявку — перезвоним в удобное время</p>
+				<form data-fls-form="ajax" class="popup__form" method="POST" action="sendmail/index.php">
+					<label class="popup__field">
+						<span class="popup__field-label">Имя</span>
+						<input data-fls-input data-fls-form-validatenow required type="text" name="name" data-fls-form-errtext="Введите имя" placeholder="Как к вам обращаться?" class="popup__input input" autocomplete="name">
+					</label>
+					<label class="popup__field">
+						<span class="popup__field-label">Телефон</span>
+						<input data-fls-input data-fls-input-mask="+7(999) 999-99-99" type="tel" name="phone" required data-fls-form-errtext="Введите корректный телефон" placeholder="+7 (___) ___-__-__" class="popup__input input" autocomplete="tel">
+					</label>
+					<label class="popup__field">
+						<span class="popup__field-label">Сообщение</span>
+						<textarea data-fls-input data-fls-input-autoheight name="message" data-fls-form-errtext="Опишите вопрос" placeholder="Опишите задачу или вопрос..." class="popup__input popup__input--area input" rows="3"></textarea>
+					</label>
+					<button type="submit" class="popup__submit button">
+						<span class="popup__submit-text">Отправить</span>
+						<span class="popup__submit-loading" aria-hidden="true">Отправка...</span>
+					</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

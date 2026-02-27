@@ -1,0 +1,582 @@
+<script type="module" src="@components/pages/index/index.js"></script>
+<link rel="stylesheet" href="@components/pages/index/index.scss">
+
+<main class="page page--index" data-city="moscow">
+	<section id="hero" class="hero" data-fls-watcher="navigator">
+		<div class="hero__bg" aria-hidden="true">
+			<div class="hero__bg-image"></div>
+			<div class="hero__gradient"></div>
+			<div class="hero__shape hero__shape--1"></div>
+			<div class="hero__shape hero__shape--2"></div>
+		</div>
+		<div class="hero__container">
+			<div class="hero__content">
+				<p class="hero__label">Подбор недвижимости</p>
+				<div class="hero__slider swiper" data-fls-hero-slider>
+					<div class="hero__slider-wrapper swiper-wrapper">
+						<div class="hero__slide swiper-slide">
+							<h1 class="hero__title">Агентство по продаже новостроек полного цикла</h1>
+							<p class="hero__text">От подбора недвижимости до выдачи ключей. Консультация бесплатно.</p>
+						</div>
+						<div class="hero__slide swiper-slide">
+							<h1 class="hero__title">Недвижимость вашей мечты</h1>
+							<p class="hero__text">Подберём квартиру, дом или участок под ваши цели и бюджет. Первая консультация бесплатно.</p>
+						</div>
+						<div class="hero__slide swiper-slide">
+							<h1 class="hero__title">Квартиры и дома под ключ</h1>
+							<p class="hero__text">От подбора до оформления — сопровождаем сделку и проверяем юридическую чистоту.</p>
+						</div>
+						<div class="hero__slide swiper-slide">
+							<h1 class="hero__title">Найдём то, что подходит именно вам</h1>
+							<p class="hero__text">Учитываем бюджет, локацию и цели. Работаем без комиссии для клиента.</p>
+						</div>
+					</div>
+					<div class="hero__slider-pagination"></div>
+				</div>
+				<div class="hero__actions">
+					<a data-fls-ripple data-fls-scrollto="#objects" data-fls-scrollto-header href="#objects" class="hero__cta hero__cta--primary">Смотреть объекты</a>
+					<a data-fls-ripple data-fls-popup-link="popup" href="#" class="hero__cta hero__cta--secondary">Оставить заявку</a>
+				</div>
+			</div>
+			<div class="hero__visual">
+				<div class="hero__tabs" data-fls-hero-tabs>
+					<div class="hero__tab-head" role="tablist" aria-label="Тип недвижимости">
+						<button type="button" class="hero__tab-btn hero__tab-btn--active" role="tab" aria-selected="true" aria-controls="hero-tab-sale" id="hero-tab-btn-sale" data-hero-tab="sale">Покупка</button>
+						<button type="button" class="hero__tab-btn" role="tab" aria-selected="false" aria-controls="hero-tab-rent" id="hero-tab-btn-rent" data-hero-tab="rent">Аренда</button>
+						<button type="button" class="hero__tab-btn" role="tab" aria-selected="false" aria-controls="hero-tab-mortgage" id="hero-tab-btn-mortgage" data-hero-tab="mortgage">Ипотека</button>
+					</div>
+					<div class="hero__tab-panels">
+						<div class="hero__tab-panel hero__tab-panel--active" id="hero-tab-sale" role="tabpanel" aria-labelledby="hero-tab-btn-sale">
+							<a href="#objects" data-fls-scrollto="#objects" data-fls-scrollto-header class="hero__card">
+								<div class="hero__card-inner">
+									<span class="hero__card-badge">Новое</span>
+									<div class="hero__card-placeholder" aria-hidden="true">
+										<svg class="hero__card-placeholder-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="9 22 9 12 15 12 15 22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+									</div>
+									<div class="hero__card-info">
+										<span class="hero__card-title">Квартиры и дома</span>
+										<span class="hero__card-meta">Подбор под ключ</span>
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="hero__tab-panel" id="hero-tab-rent" role="tabpanel" aria-labelledby="hero-tab-btn-rent" hidden>
+							<div class="hero__card hero__card--static">
+								<div class="hero__card-inner">
+									<div class="hero__card-placeholder hero__card-placeholder--rent" aria-hidden="true">
+										<svg class="hero__card-placeholder-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M2 12h20M5 12V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v7M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+									</div>
+									<div class="hero__card-info">
+										<span class="hero__card-title">Аренда недвижимости</span>
+										<span class="hero__card-meta">Подберём варианты под ваши сроки и бюджет</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="hero__tab-panel hero__tab-panel--info" id="hero-tab-mortgage" role="tabpanel" aria-labelledby="hero-tab-btn-mortgage" hidden>
+							<div class="hero__card hero__card--static hero__card--mortgage">
+								<div class="hero__card-inner">
+									<div class="hero__mortgage-info">
+										<p class="hero__mortgage-label">Ставки от</p>
+										<p class="hero__mortgage-rate">8,9%</p>
+										<p class="hero__mortgage-desc">годовых. Поможем подобрать программу и оформить сделку.</p>
+										<p class="hero__mortgage-banks">Сбербанк · ВТБ · Газпромбанк · Райффайзен · Альфа-Банк</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<a href="#objects" data-fls-scrollto="#objects" data-fls-scrollto-header class="hero__scroll-hint" aria-label="Листай вниз">
+			<span class="hero__scroll-hint-text">Смотреть дальше</span>
+			<span class="hero__scroll-hint-line" aria-hidden="true"></span>
+			<span class="hero__scroll-hint-icon" aria-hidden="true"></span>
+		</a>
+	</section>
+
+	<section class="stats reveal" data-fls-watcher>
+		<div class="stats__bg" aria-hidden="true">
+			<span class="stats__bg-dot stats__bg-dot--1"></span>
+			<span class="stats__bg-dot stats__bg-dot--2"></span>
+			<span class="stats__bg-dot stats__bg-dot--3"></span>
+		</div>
+		<div class="stats__container">
+			<div class="stats__grid" data-fls-watcher>
+				<div class="stats__item">
+					<span data-fls-digcounter data-fls-digcounter-speed="1500" class="stats__value">14</span>
+					<span class="stats__label">лет на рынке</span>
+				</div>
+				<div class="stats__item">
+					<span data-fls-digcounter data-fls-digcounter-format=" " data-fls-digcounter-speed="2000" class="stats__value">2500</span>
+					<span class="stats__label">успешных сделок</span>
+				</div>
+				<div class="stats__item">
+					<span class="stats__value-wrap">
+						<span data-fls-digcounter data-fls-digcounter-speed="1200" class="stats__value">98</span>
+						<span class="stats__suffix">%</span>
+					</span>
+					<span class="stats__label">довольных клиентов</span>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="objects" class="objects reveal" data-fls-watcher="navigator">
+		<div class="objects__bg" aria-hidden="true"></div>
+		<div class="objects__container">
+			<header class="objects__header">
+				<p class="objects__label">Каталог</p>
+				<h2 class="objects__title">Объекты недвижимости</h2>
+				<p class="objects__lead">Квартиры, дома и участки — подберём под ваши задачи</p>
+			</header>
+			<div class="objects__view-switch" data-fls-objects-view role="tablist" aria-label="Вид каталога">
+				<button type="button" class="objects__view-btn objects__view-btn--active" role="tab" aria-selected="true" data-objects-view="grid">Плитки</button>
+				<button type="button" class="objects__view-btn" role="tab" aria-selected="false" data-objects-view="slider">Слайдер</button>
+			</div>
+			<div class="objects__grid objects__content objects__content--grid" data-objects-content="grid">
+				<article class="objects__card objects__card--large">
+					<div class="objects__card-media"><span>Фото</span></div>
+					<div class="objects__card-body">
+						<span class="objects__card-type">Квартира</span>
+						<h3 class="objects__card-title">Название объекта</h3>
+						<p class="objects__card-meta">Адрес · площадь</p>
+					</div>
+				</article>
+				<article class="objects__card">
+					<div class="objects__card-media"><span>Фото</span></div>
+					<div class="objects__card-body">
+						<span class="objects__card-type">Дом</span>
+						<h3 class="objects__card-title">Название объекта</h3>
+						<p class="objects__card-meta">Адрес</p>
+					</div>
+				</article>
+				<article class="objects__card">
+					<div class="objects__card-media"><span>Фото</span></div>
+					<div class="objects__card-body">
+						<span class="objects__card-type">Участок</span>
+						<h3 class="objects__card-title">Название объекта</h3>
+						<p class="objects__card-meta">Адрес</p>
+					</div>
+				</article>
+				<article class="objects__card objects__card--wide">
+					<div class="objects__card-media"><span>Фото</span></div>
+					<div class="objects__card-body">
+						<span class="objects__card-type">Квартира</span>
+						<h3 class="objects__card-title">Название объекта</h3>
+						<p class="objects__card-meta">Адрес · площадь</p>
+					</div>
+				</article>
+			</div>
+			<div class="objects__slider-wrap objects__content objects__content--slider" data-objects-content="slider" hidden>
+				<div class="objects__slider swiper" data-fls-objects-slider>
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+							<article class="objects__card objects__card--slide">
+								<div class="objects__card-media"><span>Фото</span></div>
+								<div class="objects__card-body">
+									<span class="objects__card-type">Квартира</span>
+									<h3 class="objects__card-title">Название объекта</h3>
+									<p class="objects__card-meta">Адрес · площадь</p>
+								</div>
+							</article>
+						</div>
+						<div class="swiper-slide">
+							<article class="objects__card objects__card--slide">
+								<div class="objects__card-media"><span>Фото</span></div>
+								<div class="objects__card-body">
+									<span class="objects__card-type">Дом</span>
+									<h3 class="objects__card-title">Название объекта</h3>
+									<p class="objects__card-meta">Адрес</p>
+								</div>
+							</article>
+						</div>
+						<div class="swiper-slide">
+							<article class="objects__card objects__card--slide">
+								<div class="objects__card-media"><span>Фото</span></div>
+								<div class="objects__card-body">
+									<span class="objects__card-type">Участок</span>
+									<h3 class="objects__card-title">Название объекта</h3>
+									<p class="objects__card-meta">Адрес</p>
+								</div>
+							</article>
+						</div>
+						<div class="swiper-slide">
+							<article class="objects__card objects__card--slide">
+								<div class="objects__card-media"><span>Фото</span></div>
+								<div class="objects__card-body">
+									<span class="objects__card-type">Квартира</span>
+									<h3 class="objects__card-title">Название объекта</h3>
+									<p class="objects__card-meta">Адрес · площадь</p>
+								</div>
+							</article>
+						</div>
+						<div class="swiper-slide">
+							<article class="objects__card objects__card--slide">
+								<div class="objects__card-media"><span>Фото</span></div>
+								<div class="objects__card-body">
+									<span class="objects__card-type">Дом</span>
+									<h3 class="objects__card-title">Название объекта</h3>
+									<p class="objects__card-meta">Адрес</p>
+								</div>
+							</article>
+						</div>
+						<div class="swiper-slide">
+							<article class="objects__card objects__card--slide">
+								<div class="objects__card-media"><span>Фото</span></div>
+								<div class="objects__card-body">
+									<span class="objects__card-type">Квартира</span>
+									<h3 class="objects__card-title">Название объекта</h3>
+									<p class="objects__card-meta">Адрес · площадь</p>
+								</div>
+							</article>
+						</div>
+					</div>
+					<div class="objects__slider-pagination swiper-pagination"></div>
+					<button type="button" class="objects__slider-prev" aria-label="Назад"></button>
+					<button type="button" class="objects__slider-next" aria-label="Вперёд"></button>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="about" class="about reveal" data-fls-watcher="navigator">
+		<div class="about__bg" aria-hidden="true">
+			<span class="about__bg-shape about__bg-shape--1"></span>
+			<span class="about__bg-shape about__bg-shape--2"></span>
+		</div>
+		<div class="about__container">
+			<div class="about__main">
+				<header class="about__header">
+					<p class="about__label">О компании</p>
+					<h2 class="about__title">Помогаем с недвижимостью с 2010 года</h2>
+					<p class="about__text">Подберём объект под ваши цели, проведём сделку и оформим документы. Работаем с первичным и вторичным рынком.</p>
+				</header>
+				<div class="about__features">
+					<div class="about__feature">
+						<div class="about__feature-icon"><span>✓</span></div>
+						<h3 class="about__feature-title">Бесплатная консультация</h3>
+						<p class="about__feature-text">Обсудим задачу и варианты без обязательств</p>
+					</div>
+					<div class="about__feature">
+						<div class="about__feature-icon"><span>✓</span></div>
+						<h3 class="about__feature-title">Проверка документов</h3>
+						<p class="about__feature-text">Проверим юридическую чистоту объекта</p>
+					</div>
+					<div class="about__feature">
+						<div class="about__feature-icon"><span>✓</span></div>
+						<h3 class="about__feature-title">Сопровождение сделки</h3>
+						<p class="about__feature-text">Поможем с оформлением до ключей</p>
+					</div>
+				</div>
+			</div>
+			<aside class="about__stats">
+				<div class="about__stat">
+					<span class="about__stat-value">14+</span>
+					<span class="about__stat-label">лет на рынке</span>
+				</div>
+				<div class="about__stat">
+					<span class="about__stat-value">2500+</span>
+					<span class="about__stat-label">сделок</span>
+				</div>
+				<div class="about__stat">
+					<span class="about__stat-value">98%</span>
+					<span class="about__stat-label">довольных клиентов</span>
+				</div>
+			</aside>
+		</div>
+	</section>
+
+	<section id="why" class="why reveal" data-fls-watcher="navigator">
+		<div class="why__container">
+			<header class="why__header">
+				<p class="why__label">Почему мы</p>
+				<h2 class="why__title">Работаем для вас без комиссии и скрытых платежей</h2>
+			</header>
+			<div class="why__grid">
+				<div class="why__item">
+					<div class="why__icon" aria-hidden="true">
+						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+					</div>
+					<h3 class="why__item-title">Комиссия 0% для клиента</h3>
+					<p class="why__item-text">Работаем бесплатно для вас — всё оплачивает застройщик при успешной сделке.</p>
+				</div>
+				<div class="why__item">
+					<div class="why__icon" aria-hidden="true">
+						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" y1="20" x2="12.01" y2="20"/></svg>
+					</div>
+					<h3 class="why__item-title">Онлайн-сделки</h3>
+					<p class="why__item-text">Организуем показы и оформление онлайн — можно купить недвижимость из дома.</p>
+				</div>
+				<div class="why__item">
+					<div class="why__icon" aria-hidden="true">
+						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+					</div>
+					<h3 class="why__item-title">Безопасность сделки</h3>
+					<p class="why__item-text">С нами вы можете быть уверены в юридической чистоте и прозрачности.</p>
+				</div>
+			</div>
+			<div class="why__cta">
+				<a data-fls-ripple data-fls-popup-link="popup" href="#" class="why__button">Оставить заявку</a>
+			</div>
+		</div>
+	</section>
+
+	<section id="contacts" class="contacts reveal" data-fls-watcher="navigator">
+		<div class="contacts__container">
+			<div class="contacts__content">
+				<header class="contacts__header">
+					<p class="contacts__label">Связь</p>
+					<h2 class="contacts__title">Оставьте заявку</h2>
+					<p class="contacts__text">Ответим в течение часа в рабочее время</p>
+				</header>
+				<div class="contacts__info">
+					<a href="tel:+79159892344" class="contacts__link">+7 915 989-23-44</a>
+					<a href="tel:+79010449828" class="contacts__link">+7 901 044-98-28</a>
+					<a href="mailto:antalya.house26@gmail.com" class="contacts__link">antalya.house26@gmail.com</a>
+				</div>
+			</div>
+			<div class="contacts__form-wrap">
+				<div class="contacts__form-card">
+					<form data-fls-form="ajax" data-fls-form-gotoerr class="contacts__form" method="POST" action="sendmail/index.php">
+						<label class="contacts__field">
+							<span class="contacts__field-label">Имя</span>
+							<input data-fls-input data-fls-form-validatenow required type="text" name="name" data-fls-form-errtext="Введите имя" placeholder="Как к вам обращаться?" class="contacts__input input" autocomplete="name">
+						</label>
+						<label class="contacts__field">
+							<span class="contacts__field-label">Телефон</span>
+							<input data-fls-input data-fls-input-mask="+7(999) 999-99-99" type="tel" name="phone" required data-fls-form-errtext="Введите корректный телефон" placeholder="+7 (___) ___-__-__" class="contacts__input input" autocomplete="tel">
+						</label>
+						<label class="contacts__field">
+							<span class="contacts__field-label">Сообщение</span>
+							<textarea data-fls-input data-fls-input-autoheight name="message" data-fls-form-errtext="Ошибка" placeholder="Опишите задачу или вопрос..." class="contacts__input contacts__input--area input" rows="3"></textarea>
+						</label>
+						<button type="submit" class="contacts__submit button" data-fls-ripple>
+							<span class="contacts__submit-text">Отправить заявку</span>
+							<span class="contacts__submit-loading" aria-hidden="true">Отправка...</span>
+						</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="process" class="process reveal" data-fls-watcher="navigator">
+		<div class="process__container">
+			<header class="process__header">
+				<p class="process__label">Как мы работаем</p>
+				<h2 class="process__title">От заявки до ключей</h2>
+				<p class="process__lead">Прозрачные этапы и контроль на каждом шаге</p>
+			</header>
+			<div class="process__steps">
+				<article class="process__step">
+					<span class="process__step-num" aria-hidden="true">01</span>
+					<h3 class="process__step-title">Заявка и консультация</h3>
+					<p class="process__step-text">Обсудим задачу, бюджет и пожелания. Подберём варианты.</p>
+				</article>
+				<article class="process__step">
+					<span class="process__step-num" aria-hidden="true">02</span>
+					<h3 class="process__step-title">Подбор и просмотры</h3>
+					<p class="process__step-text">Покажем объекты, проверим документы и юридическую чистоту.</p>
+				</article>
+				<article class="process__step">
+					<span class="process__step-num" aria-hidden="true">03</span>
+					<h3 class="process__step-title">Сделка</h3>
+					<p class="process__step-text">Сопроводим оформление, договоры и расчёты.</p>
+				</article>
+				<article class="process__step">
+					<span class="process__step-num" aria-hidden="true">04</span>
+					<h3 class="process__step-title">Ключи и документы</h3>
+					<p class="process__step-text">Передача ключей, регистрация и поддержка после сделки.</p>
+				</article>
+			</div>
+		</div>
+	</section>
+
+	<section id="services" class="services reveal" data-fls-watcher="navigator">
+		<div class="services__deco" aria-hidden="true">
+			<span class="services__deco-orb services__deco-orb--1"></span>
+			<span class="services__deco-orb services__deco-orb--2"></span>
+			<span class="services__deco-orb services__deco-orb--3"></span>
+			<span class="services__deco-dot services__deco-dot--1"></span>
+			<span class="services__deco-dot services__deco-dot--2"></span>
+		</div>
+		<div class="services__container">
+			<header class="services__header">
+				<p class="services__label">Услуги</p>
+				<h2 class="services__title">Чем поможем</h2>
+			</header>
+			<div class="services__grid">
+				<article class="services__card">
+					<div class="services__icon" aria-hidden="true"><span>1</span></div>
+					<h3 class="services__card-title">Подбор недвижимости</h3>
+					<p class="services__card-text">Подберём варианты под ваш бюджет и пожелания. Организуем просмотры.</p>
+				</article>
+				<article class="services__card">
+					<div class="services__icon" aria-hidden="true"><span>2</span></div>
+					<h3 class="services__card-title">Ипотека</h3>
+					<p class="services__card-text">Поможем подобрать программу и сопроводим сделку с банком.</p>
+				</article>
+				<article class="services__card">
+					<div class="services__icon" aria-hidden="true"><span>3</span></div>
+					<h3 class="services__card-title">Оценка</h3>
+					<p class="services__card-text">Оценка объекта для сделки и оформления.</p>
+				</article>
+				<article class="services__card">
+					<div class="services__icon" aria-hidden="true"><span>4</span></div>
+					<h3 class="services__card-title">Юридические услуги</h3>
+					<p class="services__card-text">Проверка документов, юридическая чистота, сопровождение сделки.</p>
+				</article>
+				<a href="#" data-fls-popup-link="popup" class="services__card services__card--action">
+					<div class="services__icon" aria-hidden="true"><span>5</span></div>
+					<h3 class="services__card-title">Продажа объекта</h3>
+					<p class="services__card-text">Поможем продать вашу недвижимость. Оставьте заявку — обсудим условия.</p>
+					<span class="services__card-link">Оставить заявку</span>
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<section id="resort" class="resort reveal" data-fls-watcher="navigator">
+		<div class="resort__container">
+			<div class="resort__content">
+				<p class="resort__label">Курортная недвижимость</p>
+				<h2 class="resort__title">Подобрать квартиру или апартаменты на море от 4 до 138 млн</h2>
+				<p class="resort__text">Объекты у моря — подберём под ваши цели и бюджет. Оставьте заявку, перезвоним в течение часа.</p>
+				<a data-fls-ripple data-fls-popup-link="popup" href="#" class="resort__button">Оставить заявку</a>
+			</div>
+			<div class="resort__visual" aria-hidden="true">
+				<div class="resort__placeholder"></div>
+			</div>
+		</div>
+	</section>
+
+	<section id="faq" class="faq reveal" data-fls-watcher="navigator">
+		<div class="faq__deco" aria-hidden="true">
+			<span class="faq__deco-orb faq__deco-orb--1"></span>
+			<span class="faq__deco-orb faq__deco-orb--2"></span>
+			<span class="faq__deco-line faq__deco-line--1"></span>
+			<span class="faq__deco-line faq__deco-line--2"></span>
+		</div>
+		<div class="faq__container">
+			<header class="faq__header">
+				<p class="faq__label">Вопросы</p>
+				<h2 class="faq__title">Частые вопросы</h2>
+			</header>
+			<div data-fls-spollers class="faq__list">
+				<details class="faq__item">
+					<summary class="faq__question">Как быстро подберёте объекты?</summary>
+					<div class="faq__answer">Обычно первые варианты отправляем в течение 1–2 рабочих дней. Количество подборок зависит от задачи и рынка.</div>
+				</details>
+				<details class="faq__item">
+					<summary class="faq__question">Проверяете ли вы юридическую чистоту?</summary>
+					<div class="faq__answer">Да. Перед сделкой проверяем документы, историю объекта и обременения. Расскажем о рисках, если они есть.</div>
+				</details>
+				<details class="faq__item">
+					<summary class="faq__question">Работаете с ипотекой?</summary>
+					<div class="faq__answer">Да. Поможем подобрать объект под одобренную ипотеку и сопроводим сделку с банком.</div>
+				</details>
+				<details class="faq__item">
+					<summary class="faq__question">Сколько стоит консультация?</summary>
+					<div class="faq__answer">Первая консультация и подбор вариантов — бесплатно. Условия по сделке обсудим индивидуально.</div>
+				</details>
+			</div>
+		</div>
+	</section>
+
+	<section class="cta reveal" data-fls-watcher data-fls-watcher-once>
+		<div class="cta__deco" aria-hidden="true">
+			<span class="cta__deco-circle cta__deco-circle--1"></span>
+			<span class="cta__deco-circle cta__deco-circle--2"></span>
+			<span class="cta__deco-circle cta__deco-circle--3"></span>
+		</div>
+		<div class="cta__container">
+			<div class="cta__content">
+				<h2 class="cta__title">Подберём объект под ключ</h2>
+				<p class="cta__text">Оставьте заявку — перезвоним и обсудим задачу в течение часа</p>
+			</div>
+			<a data-fls-ripple data-fls-popup-link="popup" href="#" class="cta__button">Оставить заявку</a>
+		</div>
+	</section>
+
+	<section id="reviews" class="reviews reveal" data-fls-watcher data-fls-watcher-once>
+		<div class="reviews__deco" aria-hidden="true">
+			<span class="reviews__deco-orb reviews__deco-orb--1"></span>
+			<span class="reviews__deco-orb reviews__deco-orb--2"></span>
+			<span class="reviews__deco-dot reviews__deco-dot--1"></span>
+			<span class="reviews__deco-dot reviews__deco-dot--2"></span>
+			<span class="reviews__deco-dot reviews__deco-dot--3"></span>
+		</div>
+		<div class="reviews__container">
+			<header class="reviews__header">
+				<p class="reviews__label">Отзывы</p>
+				<h2 class="reviews__title">Что говорят клиенты</h2>
+			</header>
+			<div class="reviews__grid">
+				<article class="reviews__card">
+					<div class="reviews__card-body">
+						<p class="reviews__card-text">Помогли купить квартиру в новостройке. Всё проверили, документы оформили без лишней беготни. Рекомендую.</p>
+					</div>
+					<footer class="reviews__card-author">
+						<span class="reviews__card-avatar" aria-hidden="true">АК</span>
+						<div class="reviews__card-author-info">
+							<span class="reviews__card-name">Анна К.</span>
+							<span class="reviews__card-meta">Москва</span>
+						</div>
+					</footer>
+				</article>
+				<article class="reviews__card">
+					<div class="reviews__card-body">
+						<p class="reviews__card-text">Искали дом под ключ. Подобрали несколько вариантов, съездили на просмотры. Выбрали то, что нужно — спасибо за терпение и профессионализм.</p>
+					</div>
+					<footer class="reviews__card-author">
+						<span class="reviews__card-avatar" aria-hidden="true">ДВ</span>
+						<div class="reviews__card-author-info">
+							<span class="reviews__card-name">Дмитрий В.</span>
+							<span class="reviews__card-meta">Московская обл.</span>
+						</div>
+					</footer>
+				</article>
+				<article class="reviews__card">
+					<div class="reviews__card-body">
+						<p class="reviews__card-text">Обратились за проверкой перед покупкой. Юридическую чистоту проверили, риски объяснили. Сделку провели спокойно.</p>
+					</div>
+					<footer class="reviews__card-author">
+						<span class="reviews__card-avatar" aria-hidden="true">МС</span>
+						<div class="reviews__card-author-info">
+							<span class="reviews__card-name">Мария С.</span>
+							<span class="reviews__card-meta">Санкт-Петербург</span>
+						</div>
+					</footer>
+				</article>
+			</div>
+		</div>
+	</section>
+
+	<section id="partners" class="partners reveal" data-fls-watcher>
+		<div class="partners__deco" aria-hidden="true">
+			<span class="partners__deco-orb partners__deco-orb--1"></span>
+			<span class="partners__deco-orb partners__deco-orb--2"></span>
+			<span class="partners__deco-dot partners__deco-dot--1"></span>
+			<span class="partners__deco-dot partners__deco-dot--2"></span>
+		</div>
+		<div class="partners__container">
+			<p class="partners__title">Работаем с ведущими банками</p>
+			<p class="partners__text">Ипотека, рассрочка и другие программы — подберём оптимальный вариант для сделки.</p>
+			<div class="partners__list">
+				<span class="partners__item">Сбербанк</span>
+				<span class="partners__item">ВТБ</span>
+				<span class="partners__item">Газпромбанк</span>
+				<span class="partners__item">Райффайзен</span>
+				<span class="partners__item">Альфа-Банк</span>
+			</div>
+		</div>
+	</section>
+
+	<button type="button" class="page__to-top" aria-label="Наверх" data-fls-to-top></button>
+	<button type="button" class="page__contact-fab" data-fls-popup-link="popup" aria-label="Связаться с нами">
+		<span class="page__contact-fab-text">Связаться с нами</span>
+		<svg class="page__contact-fab-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+	</button>
+</main>

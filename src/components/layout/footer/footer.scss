@@ -1,0 +1,170 @@
+.footer {
+	background: #3d454d;
+	color: var(--re-light);
+	padding: toRem(48) 0 toRem(24);
+	border-top: 1px solid rgba(255, 255, 255, 0.06);
+
+	&__container {
+		display: flex;
+		flex-direction: column;
+		gap: toRem(32);
+	}
+
+	&__top {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+		gap: toRem(24);
+		padding-bottom: toRem(24);
+		border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+	}
+
+	&__logo {
+		display: inline-flex;
+		align-items: baseline;
+		gap: toRem(6);
+		text-decoration: none;
+		color: var(--re-light);
+		transition: color 0.2s;
+		@media (any-hover: hover) {
+			&:hover {
+				color: var(--re-sky);
+			}
+		}
+	}
+	&__logo-icon {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
+		color: inherit;
+		transform: translateY(-1px);
+		svg {
+			display: block;
+			width: toRem(18);
+			height: toRem(18);
+		}
+	}
+	&__logo-text {
+		font-family: "Dancing Script", cursive;
+		font-weight: 600;
+		font-size: 1.5rem;
+		line-height: 1.2;
+	}
+
+	&__nav {
+		display: flex;
+		flex-wrap: wrap;
+		gap: toRem(8) toRem(24);
+	}
+
+	&__link {
+		font-size: toRem(15);
+		color: rgba(255, 255, 255, 0.85);
+		text-decoration: none;
+		transition: color 0.2s;
+		@media (any-hover: hover) {
+			&:hover {
+				color: var(--re-sky);
+			}
+		}
+	}
+
+	&__right {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: toRem(16) toRem(24);
+	}
+
+	&__contacts {
+		display: flex;
+		align-items: center;
+		gap: toRem(16);
+	}
+
+	&__contact {
+		font-weight: 500;
+		color: var(--re-light);
+		text-decoration: none;
+		transition: color 0.2s;
+		@media (any-hover: hover) {
+			&:hover {
+				color: var(--re-sky);
+			}
+		}
+	}
+
+	&__socials {
+		display: flex;
+		align-items: center;
+		gap: toRem(12);
+	}
+
+	&__social {
+		font-size: toRem(14);
+		color: rgba(255, 255, 255, 0.9);
+		text-decoration: none;
+		transition: color 0.2s;
+		@media (any-hover: hover) {
+			&:hover {
+				color: var(--re-sky);
+			}
+		}
+	}
+
+	&__disclaimer {
+		padding: toRem(16) 0;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+	}
+
+	&__disclaimer-text {
+		font-size: toRem(12);
+		line-height: 1.5;
+		opacity: 0.7;
+		margin: 0;
+		max-width: toRem(720);
+	}
+
+	&__bottom {
+		padding-top: toRem(24);
+		display: flex;
+		flex-wrap: wrap;
+		gap: toRem(8) toRem(24);
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__copy {
+		font-size: toRem(14);
+		opacity: 0.7;
+		line-height: 1.5;
+		margin: 0;
+	}
+
+	&__docs {
+		display: flex;
+		flex-wrap: wrap;
+		gap: toRem(8);
+		align-items: center;
+		font-size: toRem(13);
+		opacity: 0.9;
+	}
+
+	&__docs-link {
+		color: rgba(255, 255, 255, 0.9);
+		text-decoration: underline;
+		text-underline-offset: toRem(3);
+		transition: color 0.2s;
+		@media (any-hover: hover) {
+			&:hover {
+				color: var(--re-sky);
+			}
+		}
+	}
+
+	&__docs-separator {
+		opacity: 0.4;
+	}
+}
